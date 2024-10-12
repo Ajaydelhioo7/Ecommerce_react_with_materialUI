@@ -1,0 +1,82 @@
+/* Product Details Container */
+.productDetailsContainer {
+  padding: 20px;
+}
+
+.breadcrumb {
+  margin-bottom: 20px;
+}
+
+.productMainSection {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+/* Image Carousel */
+.productImages {
+  display: flex;
+  flex-direction: column;
+}
+
+.productImage {
+  width: 150px;
+  height: 200px;
+  margin-bottom: 10px;
+}
+
+/* Product Info */
+.productInfo {
+  width: 60%;
+}
+
+.productTitle {
+  margin-bottom: 10px;
+}
+
+.productPricing {
+  display: flex;
+  align-items: center;
+}
+
+.productPrice {
+  font-size: 36px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.productOriginalPrice {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.discountTag {
+  background-color: #f4a261;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.bookType {
+  margin-top: 20px;
+}
+
+.quantitySection {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.addToCartButton {
+  background-color: #f4a261;
+  margin-top: 20px;
+}
+
+.productDetailsSection {
+  margin-top: 40px;
+}
+
+.productDescriptionSection {
+  margin-top: 20px;
+}
