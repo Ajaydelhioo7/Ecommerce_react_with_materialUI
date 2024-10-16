@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import logo from "../assets/99notes.webp";
+import logo from "../../assets/images/99notes.webp";
 import { Link } from "react-router-dom";
 import { Badge } from "@mui/material";
 import {
@@ -17,7 +17,7 @@ import {
   FavoriteBorder,
   ShoppingCart,
 } from "@mui/icons-material";
-import "./css/Header.css"; // Import the updated CSS file
+import "../css/Header.css"; // Import the updated CSS file
 
 const Header = ({ cartItems, onCartClick }) => {
   const [blink, setBlink] = useState(false);
@@ -51,7 +51,7 @@ const Header = ({ cartItems, onCartClick }) => {
         <Toolbar className="toolbar">
           {/* Logo Section */}
           <Box className="logoSection">
-            <Link to="/">
+            <Link to="/" className="link">
               {" "}
               {/* Redirect to homepage when clicked */}
               <img src={logo} alt="logo" className="logoImage" />
@@ -88,7 +88,9 @@ const Header = ({ cartItems, onCartClick }) => {
 
             {/* User Icon */}
             <IconButton aria-label="account">
-              <PersonOutline />
+              <Link to="/account">
+                <PersonOutline />
+              </Link>
             </IconButton>
 
             {/* Wishlist Icon */}

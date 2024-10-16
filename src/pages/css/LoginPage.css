@@ -1,0 +1,99 @@
+/* Main container styles */
+.container {
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Login and Register container styling */
+.gridContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.gridItem {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Google Button styles */
+.googleButton {
+  background-color: #f7f7f7;
+  color: #000;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  padding: 10px;
+  font-weight: 500;
+}
+
+.googleButton:hover {
+  background-color: #e0e0e0;
+}
+
+/* Form input styling */
+.textField {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.link {
+  color: #f7961c;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* Buttons styling */
+.signInButton,
+.registerButton {
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 10px;
+  background-color: #f7961c;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.signInButton:hover,
+.registerButton:hover {
+  background-color: #d88517;
+}
+
+.divider {
+  display: none;
+}
+
+@media (min-width: 960px) {
+  .divider {
+    display: block;
+    width: 2px;
+    background-color: #f0f0f0;
+    margin: 0 20px;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 960px) {
+  .gridContainer {
+    flex-direction: column;
+  }
+
+  .divider {
+    display: none;
+  }
+}

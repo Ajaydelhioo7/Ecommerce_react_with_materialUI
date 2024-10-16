@@ -9,6 +9,7 @@ const CartDrawer = ({
   onClose,
   updateCartQuantity,
   removeCartItem,
+  onCheckout, // Add onCheckout prop here
 }) => {
   // Calculate the subtotal based on the cart items
   const calculateSubtotal = () => {
@@ -102,7 +103,11 @@ const CartDrawer = ({
           <Typography variant="h6">
             Subtotal: ₹ {calculateSubtotal()}
           </Typography>
-          <Button variant="contained" className="checkoutButton">
+          <Button
+            variant="contained"
+            className="checkoutButton"
+            onClick={onCheckout} // Trigger checkout when button is clicked
+          >
             Check Out
           </Button>
         </Box>

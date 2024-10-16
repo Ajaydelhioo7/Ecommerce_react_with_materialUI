@@ -1,25 +1,33 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useNavigate,
+} from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import ProductDetails from "./pages/ProductDetails";
 import CategoryPage from "./pages/CategoryPage";
-import Header from "./components/Header";
+import Header from "./components/common/Header";
 import CartDrawer from "./components/CartDrawer";
+import AccountSettingsPage from "./pages/AccountSettingsPage";
+import LoginPage from "./pages/LoginPage"; // Import LoginPage
+import CheckoutPage from "./pages/CheckoutPage"; // Import CheckoutPage
 
 function App() {
   const [cartItems, setCartItems] = useState(() => {
-    // Retrieve cart from localStorage, or start with an empty array if none exists
     const savedCart = localStorage.getItem("cartItems");
     return savedCart ? JSON.parse(savedCart) : [];
   });
-  const [isCartOpen, setIsCartOpen] = useState(false); // Track whether the cart drawer is open
+  const [isCartOpen, setIsCartOpen] = useState(false); // Track cart drawer state
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Track login state
 
-  // Save the cartItems to localStorage whenever they change
+  // Save cartItems to localStorage whenever they change
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
 
-  // Handle adding products to the cart (for both CategoryPage and ProductDetails)
+  // Handle adding products to the cart
   const handleAddToCart = (product, quantity = 1) => {
     const updatedCart = [...cartItems];
     const existingProductIndex = updatedCart.findIndex(
@@ -33,7 +41,7 @@ function App() {
     }
 
     setCartItems(updatedCart);
-    setIsCartOpen(true); // Automatically open the cart drawer when an item is added
+    setIsCartOpen(true); // Open cart drawer when an item is added
   };
 
   // Handle updating the quantity of a product in the cart
@@ -50,9 +58,20 @@ function App() {
     setCartItems(updatedCart);
   };
 
-  // Open/close the cart drawer
+  // Toggle cart drawer
   const handleCartToggle = () => {
     setIsCartOpen(!isCartOpen);
+  };
+
+  // Handle the checkout button click
+  const handleCheckout = () => {
+    if (!isLoggedIn) {
+      // If user is not logged in, redirect to login page
+      window.location.href = "/login";
+    } else {
+      // If logged in, go to the checkout page
+      window.location.href = "/checkout";
+    }
   };
 
   return (
@@ -63,7 +82,8 @@ function App() {
         isOpen={isCartOpen}
         onClose={handleCartToggle}
         updateCartQuantity={updateCartQuantity}
-        removeCartItem={removeCartItem} // Pass removeCartItem function to CartDrawer
+        removeCartItem={removeCartItem}
+        onCheckout={handleCheckout} // Pass the handleCheckout to CartDrawer
       />
       <Routes>
         <Route path="/" element={<Homepage />} />
@@ -73,8 +93,14 @@ function App() {
         />
         <Route
           path="/categories"
-          element={<CategoryPage onAddToCart={handleAddToCart} />} // Pass handleAddToCart to CategoryPage
+          element={<CategoryPage onAddToCart={handleAddToCart} />}
         />
+        <Route
+          path="/login"
+          element={<LoginPage setIsLoggedIn={setIsLoggedIn} />}
+        />
+        <Route path="/account" element={<AccountSettingsPage />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
       </Routes>
     </Router>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../components/Header";
+import Header from "../components/common/Header";
 import Hero from "../components/Hero";
 import CourseCarousel from "../components/CourseCarousel";
 const gsFoundationCourses = [
