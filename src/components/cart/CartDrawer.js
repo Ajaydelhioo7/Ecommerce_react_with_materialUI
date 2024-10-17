@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography, Button, IconButton, Divider } from "@mui/material";
 import { Add, Remove, Close } from "@mui/icons-material";
-import "./css/CartDrawer.css";
+import "./CartDrawer.css";
 
 const CartDrawer = ({
   cartItems,

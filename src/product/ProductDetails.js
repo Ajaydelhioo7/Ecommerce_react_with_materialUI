@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Box, Typography, Button, IconButton } from "@mui/material";
 import { Add, Remove, ShoppingCart } from "@mui/icons-material";
-import "./css/ProductDetails.css";
+import "./ProductDetails.css";
 
 // Dummy product data for demonstration purposes
 const products = [

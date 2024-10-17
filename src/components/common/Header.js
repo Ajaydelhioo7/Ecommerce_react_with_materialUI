@@ -17,7 +17,7 @@ import {
   FavoriteBorder,
   ShoppingCart,
 } from "@mui/icons-material";
-import "../css/Header.css"; // Import the updated CSS file
+import "./Header.css"; // Import the updated CSS file
 
 const Header = ({ cartItems, onCartClick }) => {
   const [blink, setBlink] = useState(false);
