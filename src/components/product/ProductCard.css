@@ -1,0 +1,98 @@
+.product-card {
+  position: relative;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 16px;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Discount Badge */
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #e3a008 !important;
+  color: white;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+/* Product Image */
+.product-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 16px;
+  border-radius: 4px;
+}
+
+/* Product Info */
+.product-info {
+  text-align: center;
+}
+
+.product-title {
+  font-size: 18px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Product Pricing */
+.price {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.original-price {
+  text-decoration: line-through;
+  font-size: 14px;
+  color: #999;
+  margin-left: 8px;
+}
+
+/* Button Group: Add to Cart & Buy Now */
+.button-group {
+  display: flex;
+  justify-content: space-around;
+  gap: 8px;
+}
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+  background-color: #f59e0b !important; /* Orange */
+  color: white;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  text-transform: none;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #d97706;
+}
+
+/* Buy Now Button */
+.buy-now-btn {
+  background-color: #16a34a !important; /* Green */
+  color: white;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  text-transform: none;
+}
+
+.buy-now-btn:hover {
+  background-color: #15803d !important;
+}

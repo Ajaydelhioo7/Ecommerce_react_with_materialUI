@@ -61,15 +61,29 @@ const Header = ({ cartItems, onCartClick }) => {
 
           {/* Navigation Links */}
           <Box className="navLinks">
-            <MuiLink href="/categories" className="navLink">
+            <MuiLink component={Link} to="/categories" className="navLink">
               Categories
             </MuiLink>
-            <MuiLink href="#" className="navLink">
+            <MuiLink component={Link} to="/explore" className="navLink">
               Explore 99Notes
             </MuiLink>
-            <MuiLink href="#" className="navLink">
-              More
-            </MuiLink>
+
+            {/* More Dropdown */}
+            <Box className="dropdown">
+              <MuiLink component="button" className="navLink">
+                More
+              </MuiLink>
+              <Box className="dropdown-content">
+                {/* Add link to All Products page here */}
+                <MuiLink
+                  component={Link}
+                  to="/products"
+                  className="dropdown-item"
+                >
+                  All Products
+                </MuiLink>
+              </Box>
+            </Box>
           </Box>
 
           {/* Search Bar and Icons */}
@@ -88,7 +102,7 @@ const Header = ({ cartItems, onCartClick }) => {
 
             {/* User Icon */}
             <IconButton aria-label="account">
-              <Link to="/account">
+              <Link to="/account" className="iconLink">
                 <PersonOutline />
               </Link>
             </IconButton>

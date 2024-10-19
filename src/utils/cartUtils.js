@@ -22,3 +22,7 @@ export const updateCartQuantity = (cartItems, productId, newQuantity) => {
 export const removeCartItem = (cartItems, productId) => {
   return cartItems.filter((item) => item.id !== productId);
 };
+// Utility function to calculate the total number of items in the cart
+export const calculateCartTotalItems = (cartItems) => {
+  return cartItems.reduce((total, item) => total + item.quantity, 0);
+};

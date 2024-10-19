@@ -1,0 +1,95 @@
+/* AllProductsPage.css */
+.all-products-page {
+  padding: 20px;
+}
+
+.breadcrumbs {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.content {
+  display: flex;
+}
+
+/* Filter Section */
+.filter-section {
+  width: 20%;
+  margin-right: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+.filter-group {
+  margin-bottom: 20px;
+}
+
+.filter-group h5 {
+  margin-bottom: 10px;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Product Grid */
+.product-grid {
+  width: 75%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns */
+  gap: 20px;
+}
+
+/* ProductCard.css */
+.productCard {
+  border: 1px solid #ddd;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+
+.productImage {
+  max-width: 100%;
+  height: auto;
+}
+
+.productInfo {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.productTitle {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.productPrice {
+  color: green;
+  font-size: 1.25rem;
+}
+
+.productOriginalPrice {
+  text-decoration: line-through;
+  color: #999;
+  margin-bottom: 8px;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: space-between;
+}
+
+.addToCartButton {
+  background-color: orange;
+  color: white;
+  margin-right: 8px;
+}
+
+.buyNowButton {
+  background-color: green;
+  color: white;
+}
