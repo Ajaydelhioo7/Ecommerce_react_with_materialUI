@@ -27,7 +27,7 @@ const AppRoutes = ({
     />
     <Route
       path="/categories"
-      element={<CategoryPage onAddToCart={handleAddToCart} />} // Pass add to cart to category page
+      element={<AllProductsPage onAddToCart={handleAddToCart} />} // Pass add to cart to category page
     />
     <Route
       path="/login"

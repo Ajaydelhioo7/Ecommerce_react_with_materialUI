@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 40px;
+  background-color: #eeebeb !important;
 }
 
 .heroTextSection {
@@ -10,32 +11,54 @@
 }
 
 .heroHeading {
-  font-size: 48px;
-  font-weight: bold;
-  margin-bottom: 20px;
+  color: #3d3d3d !important;
+  font-family: "Kaisei Tokumin" !important;
+  font-size: 60px !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  line-height: normal !important;
+  margin-left: 15px !important;
 }
 
 .heroDescription {
-  font-size: 18px;
-  margin-bottom: 20px;
+  color: #3d3d3d !important;
+  font-family: "Kaisei Tokumin" !important;
+  font-size: 20px !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  line-height: normal !important;
+  margin-top: 20px !important;
+  margin-left: 15px !important;
 }
 
-.searchSection {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
+.searchSectionhero {
+  width: 400px;
+  height: 55px;
+  flex-shrink: 0;
+  background: white;
+  margin-top: 30px !important;
+  margin-left: 15px !important;
+  color: black !important;
 }
 
 .isbnInput {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 300px;
+  color: black !important;
+  font-family: "Kaisei Tokumin" !important;
+  font-size: 18px !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  line-height: normal !important;
+  margin-top: 5px;
+  margin-left: 10px;
 }
 
 .searchButton {
-  background-color: #f4a261;
-  color: white;
+  width: 120px !important;
+  height: 35px !important;
+  flex-shrink: 0 !important;
+  background: #fbab3b !important;
+  margin-top: 5px !important;
+  margin-left: 20px !important;
 }
 
 .carouselSection {
@@ -43,6 +66,7 @@
   align-items: center;
   justify-content: center;
   width: 50%;
+  margin-left: 15px !important;
 }
 
 .carousel {
@@ -63,12 +87,4 @@
   background-color: #fff;
   border-radius: 50%;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-}
-.heroHeading {
-  color: #3d3d3d !important;
-  font-family: "Kaisei Tokumin" !important;
-  font-size: 60px !important;
-  font-style: normal !important;
-  font-weight: 700 !important;
-  line-height: normal !important;
 }

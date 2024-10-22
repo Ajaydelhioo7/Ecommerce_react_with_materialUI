@@ -34,7 +34,8 @@
 }
 
 .logoImage {
-  height: 50px;
+  height: 50px !important;
+  width: 100% !important;
   margin-right: 10px;
 }
 

@@ -39,7 +39,7 @@ const Hero = () => {
         </Typography>
 
         {/* Search Section */}
-        <Box className="searchSection">
+        <Box className="searchSectionhero">
           <InputBase
             placeholder="Search for ISBN number"
             className="isbnInput"
