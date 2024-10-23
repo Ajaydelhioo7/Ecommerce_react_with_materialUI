@@ -2,42 +2,45 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Homepage from "../pages/Homepage";
 import ProductDetails from "../components/product/ProductDetails";
-import CategoryPage from "../pages/CategoryPage";
 import LoginPage from "../pages/LoginPage";
 import AccountSettingsPage from "../pages/AccountSettingsPage";
 import CheckoutPage from "../pages/CheckoutPage";
-import AllProductsPage from "../pages/AllProductsPage"; // Correct naming here
-
+import AllProductsPage from "../pages/AllProductsPage";
+import ViewCartPage from "../pages/ViewCartPage";
 const AppRoutes = ({
-  handleAddToCart, // Function to add products to the cart
-  setIsLoggedIn, // Function to manage login state
-  cartItems, // Cart items state
-  handleCartToggle, // Toggle cart drawer
-  updateCartQuantity, // Update quantity of cart items
-  removeCartItem, // Remove item from cart
-  handleCheckout, // Checkout process function
-  isCartOpen, // State to check if cart is open
-  isLoggedIn, // State to check if user is logged in
+  handleAddToCart,
+  setIsLoggedIn,
+  cartItems,
+  updateCartQuantity,
+  removeCartItem,
+  handleCheckout,
+  isLoggedIn,
 }) => (
   <Routes>
     <Route path="/" element={<Homepage />} />
     <Route
       path="/course/:id"
-      element={<ProductDetails onAddToCart={handleAddToCart} />} // Pass add to cart to product details
+      element={<ProductDetails onAddToCart={handleAddToCart} />}
     />
     <Route
-      path="/categories"
-      element={<AllProductsPage onAddToCart={handleAddToCart} />} // Pass add to cart to category page
+      path="/products"
+      element={<AllProductsPage onAddToCart={handleAddToCart} />}
     />
     <Route
       path="/login"
-      element={<LoginPage setIsLoggedIn={setIsLoggedIn} />} // Pass login state function
+      element={<LoginPage setIsLoggedIn={setIsLoggedIn} />}
     />
     <Route path="/account" element={<AccountSettingsPage />} />
     <Route path="/checkout" element={<CheckoutPage />} />
     <Route
-      path="/products"
-      element={<AllProductsPage onAddToCart={handleAddToCart} />} // Pass add to cart to AllProductsPage
+      path="/view-cart"
+      element={
+        <ViewCartPage
+          cartItems={cartItems}
+          updateCartQuantity={updateCartQuantity}
+          removeCartItem={removeCartItem}
+        />
+      }
     />
   </Routes>
 );

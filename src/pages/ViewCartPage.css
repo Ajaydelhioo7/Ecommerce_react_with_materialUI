@@ -1,0 +1,121 @@
+/* ViewCartPage.css */
+
+.viewCartPage {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cartTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.cartTable {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.cartTableHeader {
+  display: grid;
+  grid-template-columns: 3fr 1fr 2fr 1fr;
+  padding: 1rem;
+  border-bottom: 2px solid #e0e0e0;
+  font-weight: bold;
+}
+
+.cartItemRow {
+  display: grid;
+  grid-template-columns: 3fr 1fr 2fr 1fr;
+  padding: 1.5rem 1rem;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.cartItemInfo {
+  display: flex;
+  align-items: center;
+}
+
+.cartItemImage {
+  width: 80px;
+  height: 120px;
+  object-fit: cover;
+  margin-right: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.cartItemInfo button {
+  font-size: 0.9rem;
+  color: #d32f2f;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding-left: 1rem;
+  font-weight: 600;
+}
+
+.cartItemInfo button:hover {
+  text-decoration: underline;
+}
+
+.quantitySection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantitySection .MuiIconButton-root {
+  background-color: #f5f5f5;
+  padding: 0.3rem;
+}
+
+.quantitySection .MuiIconButton-root:hover {
+  background-color: #e0e0e0;
+}
+
+.cartSummary {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-top: 2px solid #e0e0e0;
+}
+
+.cartSummary h6 {
+  margin-right: 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.cartSummary button {
+  padding: 0.8rem 2.5rem;
+  font-size: 1.2rem;
+  background-color: #f8b133;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.cartSummary button:hover {
+  background-color: #e89f2e;
+}
+
+.breadcrumbs {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #999;
+  text-align: left;
+}
+
+.breadcrumbs span {
+  color: #555;
+}
+
+.breadcrumbs span:last-child {
+  font-weight: bold;
+}

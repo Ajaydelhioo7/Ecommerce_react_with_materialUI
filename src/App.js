@@ -68,9 +68,14 @@ function App() {
         />
 
         <AppRoutes
-          handleAddToCart={handleAddToCart} // Pass addToCart function to routes
-          setIsLoggedIn={setIsLoggedIn} // Pass setIsLoggedIn to routes
-          isLoggedIn={isLoggedIn} // Pass isLoggedIn state to routes
+          handleAddToCart={handleAddToCart}
+          setIsLoggedIn={setIsLoggedIn}
+          isLoggedIn={isLoggedIn}
+          cartItems={cartItems}
+          updateCartQuantity={(id, qty) =>
+            setCartItems(updateCartQuantity(cartItems, id, qty))
+          }
+          removeCartItem={(id) => setCartItems(removeCartItem(cartItems, id))}
         />
 
         <Footer />

@@ -61,8 +61,8 @@ const Header = ({ cartItems, onCartClick }) => {
 
           {/* Navigation Links */}
           <Box className="navLinks">
-            <MuiLink component={Link} to="/categories" className="navLink">
-              Categories
+            <MuiLink component={Link} to="/products" className="navLink">
+              All Products
             </MuiLink>
             <MuiLink component={Link} to="/explore" className="navLink">
               Explore 99Notes

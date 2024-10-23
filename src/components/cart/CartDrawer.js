@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Typography, Button, IconButton, Divider } from "@mui/material";
 import { Add, Remove, Close } from "@mui/icons-material";
+import { Link } from "react-router-dom"; // Import Link to navigate to View Cart page
 import "./CartDrawer.css";
 
 const CartDrawer = ({
@@ -110,6 +111,13 @@ const CartDrawer = ({
           >
             Check Out
           </Button>
+          <Link to="/view-cart" style={{ textDecoration: "none" }}>
+            {" "}
+            {/* Add the link to view cart */}
+            <Button variant="outlined" className="viewCartButton">
+              View Cart
+            </Button>
+          </Link>
         </Box>
       )}
     </Box>
