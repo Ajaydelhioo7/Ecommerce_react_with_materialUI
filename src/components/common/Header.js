@@ -58,34 +58,6 @@ const Header = ({ cartItems, onCartClick }) => {
             </Link>
             <Typography className="logoText">99NOTES</Typography>
           </Box>
-
-          {/* Navigation Links */}
-          <Box className="navLinks">
-            <MuiLink component={Link} to="/products" className="navLink">
-              All Products
-            </MuiLink>
-            <MuiLink component={Link} to="/explore" className="navLink">
-              Explore 99Notes
-            </MuiLink>
-
-            {/* More Dropdown */}
-            <Box className="dropdown">
-              <MuiLink component="button" className="navLink">
-                More
-              </MuiLink>
-              <Box className="dropdown-content">
-                {/* Add link to All Products page here */}
-                <MuiLink
-                  component={Link}
-                  to="/products"
-                  className="dropdown-item"
-                >
-                  All Products
-                </MuiLink>
-              </Box>
-            </Box>
-          </Box>
-
           {/* Search Bar and Icons */}
           <Box className="iconSection">
             {/* Search Input */}
@@ -98,6 +70,33 @@ const Header = ({ cartItems, onCartClick }) => {
               <IconButton aria-label="search">
                 <Search />
               </IconButton>
+            </Box>
+
+            {/* Navigation Links */}
+            <Box className="navLinks">
+              <MuiLink component={Link} to="/products" className="navLink">
+                All Products
+              </MuiLink>
+              <MuiLink component={Link} to="/explore" className="navLink">
+                Explore 99Notes
+              </MuiLink>
+
+              {/* More Dropdown */}
+              <Box className="dropdown">
+                <MuiLink component="button" className="navLink">
+                  More
+                </MuiLink>
+                <Box className="dropdown-content">
+                  {/* Add link to All Products page here */}
+                  <MuiLink
+                    component={Link}
+                    to="/products"
+                    className="dropdown-item"
+                  >
+                    All Products
+                  </MuiLink>
+                </Box>
+              </Box>
             </Box>
 
             {/* User Icon */}

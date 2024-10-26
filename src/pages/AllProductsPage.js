@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+// src/pages/AllProductsPage.js
+import React, { useState, useEffect } from "react";
 import ProductCard from "../components/product/ProductCard";
-import products from "../components/product/data/products";
+import { fetchProducts } from "../api/productApi"; // Import the API function
 import "./AllProductsPage.css";
 
 const AllProductsPage = ({ onAddToCart }) => {
@@ -9,6 +10,44 @@ const AllProductsPage = ({ onAddToCart }) => {
     exam: [],
     category: [],
   });
+  const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+
+  // Fetch products from API
+  useEffect(() => {
+    const loadProducts = async () => {
+      try {
+        const fetchedProducts = await fetchProducts();
+        setProducts(fetchedProducts);
+        setFilteredProducts(fetchedProducts);
+      } catch (error) {
+        console.error("Failed to load products:", error);
+      }
+    };
+
+    loadProducts();
+  }, []);
+
+  // Filter products whenever filters or products change
+  useEffect(() => {
+    const applyFilters = () => {
+      const filtered = products.filter((product) => {
+        const { subject, exam, category } = filters;
+
+        const subjectMatch =
+          subject.length === 0 || subject.includes(product.subject);
+        const examMatch = exam.length === 0 || exam.includes(product.exam);
+        const categoryMatch =
+          category.length === 0 || category.includes(product.category);
+
+        return subjectMatch && examMatch && categoryMatch;
+      });
+
+      setFilteredProducts(filtered);
+    };
+
+    applyFilters();
+  }, [filters, products]);
 
   const handleFilterChange = (filterType, value) => {
     setFilters((prevFilters) => {
@@ -18,18 +57,6 @@ const AllProductsPage = ({ onAddToCart }) => {
       return { ...prevFilters, [filterType]: updatedFilter };
     });
   };
-
-  const filteredProducts = products.filter((product) => {
-    const { subject, exam, category } = filters;
-
-    const subjectMatch =
-      subject.length === 0 || subject.includes(product.subject);
-    const examMatch = exam.length === 0 || exam.includes(product.exam);
-    const categoryMatch =
-      category.length === 0 || category.includes(product.category);
-
-    return subjectMatch && examMatch && categoryMatch;
-  });
 
   return (
     <div className="all-products-page">
