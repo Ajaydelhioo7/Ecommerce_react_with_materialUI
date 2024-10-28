@@ -1,28 +1,42 @@
-import React, { useState } from "react";
+// src/components/CourseCarousel.js
+import React, { useState, useEffect } from "react";
 import { Box, Typography, IconButton } from "@mui/material";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
+import { fetchCoursesByCategory } from "../api/courseApi"; // Import the API function
 import "./css/CourseCarousel.css";
 
-// Reusable Carousel Component
-const CourseCarousel = ({ categoryTitle, courses }) => {
+const CourseCarousel = ({ categoryTitle }) => {
+  const [courses, setCourses] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const itemsToShow = 4; // Define how many items to show at a time
+  const itemsToShow = 4;
 
-  // Handle clicking on the previous button
+  // Fetch courses when component mounts or categoryTitle changes
+  useEffect(() => {
+    const loadCourses = async () => {
+      try {
+        const fetchedCourses = await fetchCoursesByCategory(categoryTitle);
+        setCourses(fetchedCourses);
+      } catch (error) {
+        console.error("Failed to load courses:", error);
+      }
+    };
+
+    loadCourses();
+  }, [categoryTitle]);
+
+  // Pagination control
   const handlePrev = () => {
     setCurrentIndex(
       currentIndex === 0 ? courses.length - itemsToShow : currentIndex - 1
     );
   };
 
-  // Handle clicking on the next button
   const handleNext = () => {
     setCurrentIndex(
       currentIndex === courses.length - itemsToShow ? 0 : currentIndex + 1
     );
   };
 
-  // Get the items to show (slice array based on the current index)
   const visibleCourses = courses.slice(
     currentIndex,
     currentIndex + itemsToShow
@@ -35,22 +49,21 @@ const CourseCarousel = ({ categoryTitle, courses }) => {
       </Typography>
 
       <Box className="carouselWrapper">
-        {/* Left Arrow */}
         <IconButton onClick={handlePrev} className="carouselButton">
           <ArrowBackIos />
         </IconButton>
 
-        {/* Carousel Items */}
         <Box className="carouselContent">
-          {visibleCourses.map((course, index) => (
+          {visibleCourses.map((course) => (
             <Box
               key={course.id}
               className="carouselItem"
-              onClick={() => (window.location.href = `/course/${course.id}`)} // Clickable
+              onClick={() => (window.location.href = `/course/${course.id}`)}
             >
               <Box className="courseDiscount">15% Off</Box>
-              <Box className="courseImagePlaceholder"></Box>{" "}
-              {/* Placeholder for course image */}
+              <Box className="courseImagePlaceholder">
+                <img src={course.image} alt={course.title} />
+              </Box>
               <Typography variant="h6" className="courseTitle">
                 {course.title}
               </Typography>
@@ -61,7 +74,6 @@ const CourseCarousel = ({ categoryTitle, courses }) => {
           ))}
         </Box>
 
-        {/* Right Arrow */}
         <IconButton onClick={handleNext} className="carouselButton">
           <ArrowForwardIos />
         </IconButton>
